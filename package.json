@@ -1,0 +1,32 @@
+{
+  "name": "assignmentbackend",
+  "version": "1.0.0",
+  "description": "assignmentBackEnd",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon -L index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.3",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-async-handler": "^1.2.0",
+    "express-intercept": "^1.1.1",
+    "express-rate-limit": "^7.5.0",
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.2",
+    "lodash": "^4.17.21",
+    "mongoose": "^8.8.4",
+    "mongoose-sequence": "^6.0.1",
+    "rate-limit-redis": "^4.2.0",
+    "redis": "^4.7.0",
+    "swagger-generator-express": "^2.1.1"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^9.3.0",
+    "nodemon": "^3.1.7"
+  }
+}

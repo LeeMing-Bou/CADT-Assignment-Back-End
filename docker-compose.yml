@@ -1,0 +1,39 @@
+services:
+  express:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: project_assignment_back_end
+    container_name: My-Assignment-Back-End
+    ports:
+      - "3333:3333"
+    volumes:
+      - ./src:/app/src
+      - ./index.js:/app/index.js
+      - .env:/app/.env
+      - ./index.html:/app/index.html
+  mongodb:
+    build:
+      context: .
+      dockerfile: Dockerfile-mongo
+    image: database_assignment_back_end
+    container_name: DB_MyAssignment_Back_End
+    ports:
+      - "27168:27017"
+    volumes:
+      - mongodbdata:/data/db
+  redis:
+      image: redis:5
+      container_name: Assignment-redis
+      ports:
+        - 60168:6379
+  redis-commander:
+    image: rediscommander/redis-commander:latest
+    environment:
+      - REDIS_HOSTS=local:cadt-redis:6379
+    ports:
+      - "8082:8081"
+    depends_on:
+      - redis
+volumes:
+  mongodbdata:
