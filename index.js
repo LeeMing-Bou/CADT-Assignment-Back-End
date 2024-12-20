@@ -10,7 +10,6 @@ const rateLimit = require('express-rate-limit');
 const redisClient = require('./src/redis/redis.js');
 const setupSwagger = require ('./src/swaggerDoc/swagger.js')
 
-
 const CategoriesRouter = require('./src/routes/categories.js');
 const CustomerRouter = require('./src/routes/customers.js');
 const EmployeeRouter = require('./src/routes/employee.js');
@@ -55,7 +54,7 @@ app.use('/Customers', cacheMiddleware, cacheInterceptor(1*60), invalidateInterce
 app.use('/Employees', cacheMiddleware, cacheInterceptor(1*60), invalidateInterceptor, EmployeeRouter);
 app.use('/OrderDetails', cacheMiddleware, cacheInterceptor(1*60), invalidateInterceptor, OrderDetailRouter);
 app.use('/ProductOrdered', cacheMiddleware, cacheInterceptor(1*60), invalidateInterceptor, ProductOrderedRouter);
-app.use('/Products', cacheMiddleware, cacheInterceptor(1*60), invalidateInterceptor, ProductRouter);
+app.use('/Products', verifyToken, cacheMiddleware, cacheInterceptor(1 * 60), invalidateInterceptor, ProductRouter);
 app.use('/Shippers', cacheMiddleware, cacheInterceptor(1*60), invalidateInterceptor, ShipperRouter);
 app.use('/Users', cacheMiddleware, cacheInterceptor(1*60), invalidateInterceptor, UserRouter);
 app.use(handleError);
