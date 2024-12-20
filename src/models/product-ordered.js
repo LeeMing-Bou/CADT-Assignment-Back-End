@@ -5,9 +5,14 @@ const productOrderedSchema = new mongoose.Schema({
   proOrderedNo: {type: Number},
   proOrderDate: { type: Date, required: true, default: new Date() },
   proOrderNote: {type: String},
-  empID: [{ type: mongoose.Types.ObjectId, ref: 'Employee' }],
-  cusID: [{ type: mongoose.Types.ObjectId, ref: 'Customer' }],
-  proID: [{ type: mongoose.Types.ObjectId, ref: 'Product' }],
+  empID: { type: Date, required: true },
+  cusID: { type: Date, required: true, },
+  proID: { type: Date, required: true, },
+
+  // empID: [{ type: mongoose.Types.ObjectId, ref: 'Employee' }],
+  // cusID: [{ type: mongoose.Types.ObjectId, ref: 'Customer' }],
+  // proID: [{ type: mongoose.Types.ObjectId, ref: 'Product' }],
+  
 });
 
 //For Auto Increasement when Insert Into DB

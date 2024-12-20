@@ -8,9 +8,8 @@ module.exports = {
       userName: Joi.string().required(),
       userPass: Joi.string().required(),
       userEmail: Joi.string().required(),
-      userRegisterDate: Joi.string().required(),
       userRole: Joi.string().required(),
-      userProfile: Joi.string().required(),
+      userProfile: Joi.string(),
     },
     model: 'createUsers', // Name of the model
     group: 'Users', // Swagger tag for apis.
@@ -43,9 +42,8 @@ module.exports = {
       userName: Joi.string().required(),
       userPass: Joi.string().required(),
       userEmail: Joi.string().required(),
-      userRegisterDate: Joi.string().required(),
       userRole: Joi.string().required(),
-      userProfile: Joi.string().required(),
+      userProfile: Joi.string(),
     },
     model: 'Update Users By ID',
     group: 'Users',

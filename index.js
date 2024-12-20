@@ -42,10 +42,6 @@ const requestLimiter = rateLimit({
 app.use(bodyParser.json());
 app.use(requestLimiter);
 
-// redisClient.set("Testing Cache Redis", "Hello! I am just a chill guy!!", {
-//   EX : 20
-// })
-
 //No Need to Apply Caches
 app.use('/Auth', AuthRouter);
 

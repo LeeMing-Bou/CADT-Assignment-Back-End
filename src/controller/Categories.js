@@ -7,29 +7,6 @@ const retrieveAllCategories = asyncHandler(async (req, res) => {
   const retrieveData = await CategoriesModel.find();
   return res.json(retrieveData);
 
-  //Redis is a middle database that can reduce time of requesting the same value esp apply with GET method
-  //Logically, If there are 2 users try to use the same data. So, when the first person request and get From DB
-  //After that it will be set in Cache on Redis By "Key". Then the second person is requesting the same request
-  //So, It will check "Key" in Redis match or not. If YES, it will return to Client rapidly. If No, it will get from DB again.
-
-  //=================Manually Apply For Setting/Cache DATA into Redis=================//
-
-  // const KeyCache = '/Categories';
-  // //Check Cache exist or not in Redis
-  // const result = await redisClient.get(KeyCache);
-  // if (!result) {
-  //   // Reduce Comsumption time
-  //   const retrieveData = await CategoriesModel.find();
-  //   //Before Set it to Redis need to convert to String bec current Data as JSON
-  //   redisClient.set(KeyCache, JSON.stringify(retrieveData), {
-  //     EX: 60,
-  //   });
-  //   return res.json(retrieveData);
-  // }
-  // const resultFromRedis = JSON.parse(result);
-  // return res.json(resultFromRedis);
-
-  //===============================================================================//
 });
 
 const retrieveCategoriesByID = asyncHandler(async (req, res) => {

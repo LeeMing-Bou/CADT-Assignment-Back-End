@@ -5,7 +5,6 @@ module.exports = {
   // 0 1 2 3 ... Ref to Route of each Router
   0: {
     body: {
-      detailNo: Joi.string().required(),
       proOrderID: Joi.string().required(),
       proID: Joi.string().required(),
       Qty: Joi.string().required(),
@@ -38,7 +37,6 @@ module.exports = {
       id: Joi.string().required(),
     },
     body: {
-      detailNo: Joi.string().required(),
       proOrderID: Joi.string().required(),
       proID: Joi.string().required(),
       Qty: Joi.string().required(),

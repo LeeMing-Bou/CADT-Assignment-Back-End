@@ -14,7 +14,6 @@ module.exports = {
       empPosition: Joi.string().required(),
       empAddresss: Joi.string().required(),
       empBD: Joi.string().required(),
-      empStartDate: Joi.string().required(),
       empStatus: Joi.string().required(),
     },
     model: 'createEmployees', // Name of the model
@@ -54,7 +53,6 @@ module.exports = {
       empPosition: Joi.string().required(),
       empAddresss: Joi.string().required(),
       empBD: Joi.string().required(),
-      empStartDate: Joi.string().required(),
       empStatus: Joi.string().required(),
     },
     model: 'Update Employees By ID',

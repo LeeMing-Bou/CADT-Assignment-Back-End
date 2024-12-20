@@ -5,11 +5,11 @@ const swagger = require('swagger-generator-express');
 const options = {
   title: 'CADT Assignment Back End',
   version: '1.0.0',
-//   license: {
-//     name: 'Apache 2.0',
-//     url: 'https://www.apache.org/licenses/LICENSE-2.0.html',
-//   },
-  host: `${process.env.API_HOST}`,
+  //   license: {
+  //     name: 'Apache 2.0',
+  //     url: 'https://www.apache.org/licenses/LICENSE-2.0.html',
+  //   },
+  host: `${process.env.APISwagger_HOST}`,
   basePath: '/',
   schemes: ['http', 'https'],
   securityDefinitions: {

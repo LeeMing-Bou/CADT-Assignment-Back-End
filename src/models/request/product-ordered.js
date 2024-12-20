@@ -5,10 +5,10 @@ module.exports = {
   // 0 1 2 3 ... Ref to Route of each Router
   0: {
     body: {
-      proOrderDate: Joi.string().required(),
-      empID: Joi.string().required(),
-      cusID: Joi.string().required(),
       proID: Joi.string().required(),
+      cusID: Joi.string().required(),
+      empID: Joi.string().required(),
+      proOrderNote: Joi.string(),
     },
     model: 'createProductOrdered', // Name of the model
     group: 'ProductOrdered', // Swagger tag for apis.
@@ -38,10 +38,10 @@ module.exports = {
       id: Joi.string().required(),
     },
     body: {
-      proOrderDate: Joi.string().required(),
-      empID: Joi.string().required(),
-      cusID: Joi.string().required(),
       proID: Joi.string().required(),
+      cusID: Joi.string().required(),
+      empID: Joi.string().required(),
+      proOrderNote: Joi.string(),
     },
     model: 'Update ProductOrdered By ID',
     group: 'ProductOrdered',
